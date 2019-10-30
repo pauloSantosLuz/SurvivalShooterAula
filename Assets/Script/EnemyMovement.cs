@@ -5,8 +5,8 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;               
-    //PlayerHealth playerHealth;      
-    //EnemyHealth enemyHealth;        
+    PlayerHealth playerHealth;      
+    EnemyHealth enemyHealth;        
 	NavMeshAgent nav;               
 
 
@@ -14,8 +14,8 @@ public class EnemyMovement : MonoBehaviour
     {
         // Set up the references.
         player = GameObject.FindGameObjectWithTag ("Player").transform;
-        //playerHealth = player.GetComponent <PlayerHealth> ();
-        //enemyHealth = GetComponent <EnemyHealth> ();
+        playerHealth = player.GetComponent <PlayerHealth> ();
+        enemyHealth = GetComponent <EnemyHealth> ();
         nav = GetComponent <NavMeshAgent>();
     }
 
@@ -23,16 +23,16 @@ public class EnemyMovement : MonoBehaviour
     void Update ()
     {
         
-       // if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
-        //{
+        if(enemyHealth.vidaAtual > 0 && playerHealth.vidaAtual > 0)
+        {
             // ... set the destination of the nav mesh agent to the player.
             nav.SetDestination (player.position);
-        //}
+        }
         
-        //else
-        //{
+        else
+        {
         
-            //nav.enabled = false;
-//        }
+            nav.enabled = false;
+        }
     } 
 }
