@@ -1,4 +1,4 @@
-SurvivalShooterAula
+survival-shooter-project
 ===========
 
   Segundo projeto aplicado no minicurso: Desenvolvimento de Games com Unity
